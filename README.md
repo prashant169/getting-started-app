@@ -8,6 +8,7 @@ Use following command.
 1) Clone ➖https://github.com/prashant169/getting-started-app.git
    
 Make sure you're in the getting-started-app directory.
+
 2) cd /path/to/getting-started-app
 
 3) cd /path/to/getting-started-app
@@ -21,20 +22,29 @@ Make sure you're in the getting-started-app directory.
     vim Dockerfile
 7)
    #syntax=docker/dockerfile:1
+  
    FROM node:18-alpine
+  
    WORKDIR /app
+  
    COPY . .
+  
    RUN yarn install --production
+  
    CMD ["node", "src/index.js"]
+  
    EXPOSE 3000
   
 9) wq!     (exit frome vi editor)
     
 11) Build the image using the following commands:
+    
     docker build -t getting-started .
     
 8)Run the application in a container using the docker run command.
+
     docker run -dp  3000:3000 getting-started
     
 9)Run the following docker ps command in a terminal to list your containers.
+
    docker ps
